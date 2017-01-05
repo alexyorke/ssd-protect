@@ -3,9 +3,9 @@ Get notified when an app writes a lot of data to your SSD. You can adjust the th
 
 You can run it like this:
 
-`bash path/to/ssd-protect.sh disktype megabytesThreshold`
+`bash path/to/ssd-protect.sh disktype megabytesThreshold /path/to/savefile.txt`
 
-Where `disktype` is the name of the disk (after /dev/) and `megabytesThreshold` is how many megabytes can be written before you should be notified.
+Where `disktype` is the name of the disk (after /dev/) and `megabytesThreshold` is how many megabytes can be written before you should be notified, and `/path/to/savefile.txt` is a text file which stores how many megabytes have been written since the last check. This file must be different for every disk you intend to monitor. 
 
 Sample notification:
 
