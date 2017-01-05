@@ -8,7 +8,7 @@
 hdd="$1"
 
 # where to store ssd protect information
-prevMbDb="$HOME/.ssd-protect.txt"
+prevMbDb="$3"
 
 # how many mb can be written before you should be notified that something is up (must be a positive integer)
 warningThreshold="$2"
