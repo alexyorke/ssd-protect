@@ -1,6 +1,12 @@
 # ssd-protect
 Get notified when an app writes a lot of data to your SSD. You can adjust the thresholds as to how much an app has to write in the script file.
 
+You can run it like this:
+
+`bash path/to/ssd-protect.sh disktype megabytesThreshold`
+
+Where `disktype` is the name of the disk (after /dev/) and `megabytesThreshold` is how many megabytes can be written before you should be notified.
+
 Sample notification:
 
 `10000 megabyte(s) have been written since last check, threshold is 1000 mb!`
@@ -14,7 +20,7 @@ Or, add this to your crontab file to get notified if you exceed your threshold w
 
 `00 00 * * * bash path/to/ssd-protect.sh > /dev/null`
 
-##Requirements
+## Requirements
 
 I've only tested it on Ubuntu 16.04, but it should work on any *buntu/debian variant  
 
