@@ -5,13 +5,13 @@
 
 # the name after /dev/ for your hdd (e.g. sda1) for the hardrive that you want to monitor
 # you can use the "disks" app in ubuntu to find this information or by running df -h
-hdd="sdb"
+hdd="$1"
 
 # where to store ssd protect information
 prevMbDb="$HOME/.ssd-protect.txt"
 
 # how many mb can be written before you should be notified that something is up (must be a positive integer)
-warningThreshold=1
+warningThreshold="$2"
 
 # End configuration
 
