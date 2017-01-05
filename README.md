@@ -15,3 +15,7 @@ Or, add this to your crontab file to get notified if you exceed your threshold w
 `00 00 * * * bash path/to/ssd-protect.sh > /dev/null`
 
 ##Requirements
+
+I've only tested it on Ubuntu 16.04, but it should work on any *buntu/debian variant  
+
+Requires /proc/diskstats to be available.
