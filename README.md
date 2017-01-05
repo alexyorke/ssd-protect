@@ -7,9 +7,11 @@ Sample notification:
 
 You can add this line to your crontab file to get a desktop notification if the threshold is reached (be warned, as the desktop notifications may disappear quickly):
 
-`00 00 * * * bash path/to/ssd-protect.sh > /dev/null | notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')`
+`00 00 * * * bash path/to/ssd-protect.sh > /dev/null | notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"`
 
 
 Or, add this to your crontab file to get notified if you exceed your threshold writes in a day and send the output to email/whatever you have configured for cron:
 
 `00 00 * * * bash path/to/ssd-protect.sh > /dev/null`
+
+##Requirements
