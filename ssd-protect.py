@@ -82,7 +82,8 @@ firstEntry = min(database.items(),
 for disks in database:
     if (shownSoFar > amountToShow):
         break
-    if (prevDiskEntry is not None and (disks - prevDiskEntry) < granularity):
+    if (prevDiskEntry is not None and (prevDiskEntry - disks) < granularity):
+        prevDiskEntry = disks
         continue
 
     prevDiskEntry = disks
