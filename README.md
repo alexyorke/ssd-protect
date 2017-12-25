@@ -20,8 +20,25 @@ Or, add this to your crontab file to get notified if you exceed your threshold w
 
 `00 00 * * * bash path/to/ssd-protect.sh > /dev/null`
 
+## Roadmap
+
+ssd-protect is currently being ported to Python 3 to allow for more features to be added. You can run ssd-protect in your cron as often as you'd like to have data for. In your crontab, just add `00 00 * * * python3 /path/to/ssd-protect.py --daemon > /dev/null` to update the database every day at 12am. The new interface will look extremely similar to vnstat. This is the proposed interface:
+```
+decagon@server:~$ python3 ssd-protect.py
+                        rx              /       tx              /       total           /       estimated
+ sdb:
+        Dec 12, 17'     24.0 KB         /       819.0 KB        /        843.0 KB
+ vda1:
+        Dec 12, 17'     664.0 KB        /       673.0 KB        /         1.31 MB
+ vda:
+        Dec 12, 17'     667.0 KB        /       688.5 KB        /         1.32 MB
+   ```     
+        
+In this example, it will show you how much has been written to every disk every day. The ssd-protect daemon can be run as often as you like, and the granularity for displaying the data can be adjusted down to the second, or up to the year. Unfortunately, the previous data files will not be compatible with version 2.0 of ssd-protect.
+
 ## Requirements
 
-I've only tested it on Ubuntu 16.04, but it should work on any *buntu/debian variant  
+Requires /proc/diskstats to be available, and Python 3.
 
-Requires /proc/diskstats to be available.
+
+
