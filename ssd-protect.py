@@ -31,13 +31,6 @@ try:
 except FileNotFoundError:
     pass
 
-if (len(database) <= 1):
-    print("ssd-protect: not enough data available yet.")
-    exit()
-if (len(database) == 2):
-    print("ssd-protect: not enough data available yet for chosen granularity size.")
-    exit()
-
 # add data from right now into the database
 database[now] = disks
 
@@ -46,6 +39,13 @@ if writeToDb:
     pickle_out = open(pathToDb, "wb")
     pickle.dump(database, pickle_out)
     pickle_out.close()
+
+if (len(database) <= 1):
+    print("ssd-protect: not enough data available yet.")
+    exit()
+if (len(database) == 2):
+    print("ssd-protect: not enough data available yet for chosen granularity size.")
+    exit()
 
 
 def printDiskEntry(date, megabytesWritten, megabytesRead, displayEstimate=False):
